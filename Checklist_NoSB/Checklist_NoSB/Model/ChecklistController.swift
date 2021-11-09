@@ -27,7 +27,7 @@ class ChecklistController: UIViewController {
   
   func setDummyData() {
     for i in 0...8 {
-      let newItem = ChecklistItem()
+      var newItem = ChecklistItem()
       newItem.checked = (i%2 == 0)
       newItem.text = "Content \(i+1)"
       items.append(newItem)
@@ -122,10 +122,10 @@ extension ChecklistController: UITableViewDelegate, UITableViewDataSource {
   
   func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //    let cell = tableView.cellForRow(at: indexPath) as! ListCell
-    let item = items[indexPath.row]
+    var item = items[indexPath.row]
 //    item.checked.toggle()
-    item.checked = !item.checked
-    let newItem = ChecklistItem()
+    item.toggle()
+    var newItem = ChecklistItem()
     newItem.text = item.title
     newItem.checked = item.isChecked
 //    items[indexPath.row] = item

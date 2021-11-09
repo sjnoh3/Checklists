@@ -10,6 +10,7 @@ import UIKit
 protocol ListCellPresentable {
   var isChecked: Bool { get }
   var title: String? { get }
+  mutating func toggle()
 }
 
 class ListCell: UITableViewCell {

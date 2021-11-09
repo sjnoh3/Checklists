@@ -22,4 +22,8 @@ extension ChecklistItem: ListCellPresentable {
   var title: String? {
     return text
   }
+  
+  mutating func toggle() {
+    checked = !checked
+  }
 }

@@ -54,7 +54,7 @@ class ItemDetailViewController: UIViewController {
   
   
   @objc private func addItem() {
-    let item = ChecklistItem()
+    var item = ChecklistItem()
     print(textField.text!)
     if textField.hasText {
       item.text = textField.text ?? "This should have not been added..."
